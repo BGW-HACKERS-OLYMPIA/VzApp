@@ -57,10 +57,10 @@ public class Holding {
 		} else {
 			orders.add(order);
 			
-			if (order.getOrderType().equals(OrderType.ADD)) {
+			if (order.getOrderType().equals("ADD")) {
 				setQuantity(getQuantity()+order.getQuantity());
 				//setPurchaseValue(getPurchaseValue().add(order.getPrice().multiply(new BigDecimal(order.getQuantity()))));
-			} else if (order.getOrderType().equals(OrderType.DELETE)) {
+			} else if (order.getOrderType().equals("DELETE")) {
 				setQuantity(getQuantity()-order.getQuantity());
 				//setSellValue(getSellValue().add(order.getPrice().multiply(new BigDecimal(order.getQuantity()))));
 			}

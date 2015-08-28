@@ -27,8 +27,8 @@ public class Account implements Serializable {
     @Column(name = "id")
 	private Integer id;
 
-	//@Column(name = "address", length = 250)
-   // private String address;
+	@Column(name = "address", length = 250)
+   private String address;
 
 	@Column(name = "passwd", length = 250)
     private String passwd;
@@ -40,29 +40,29 @@ public class Account implements Serializable {
 	@Column(name = "empid", length = 250)
     private String empid;
 
-	//@Column(name = "creditcard", length = 250)
-   // private String creditcard;
+	@Column(name = "creditcard", length = 250)
+    private String creditcard;
 
 	@Column(name = "fullname", length = 250)
     private String fullname;
 	
-	//@Column(name = "authtoken", length = 100)
-    //private String authtoken;
+	@Column(name = "authtoken", length = 100)
+    private String authtoken;
     
 	@Column(name = "creationdate")
 	@Temporal(TemporalType.TIMESTAMP)
 	@DateTimeFormat(style = "LL")
     private Date creationdate;
     
-	//@Column(name = "openbalance", precision = 14, scale = 2)
-   // private BigDecimal openbalance;
+	@Column(name = "openbalance", precision = 14, scale = 2)
+   private BigDecimal openbalance;
     
 	@Column(name = "logoutcount")
 	@NotNull
     private Integer logoutcount;
     
-	//@Column(name = "balance", precision = 14, scale = 2)
-   // private BigDecimal balance;
+	@Column(name = "balance", precision = 14, scale = 2)
+   private BigDecimal balance;
     
 	@Column(name = "lastlogin")
 	@Temporal(TemporalType.TIMESTAMP)
@@ -137,14 +137,14 @@ public class Account implements Serializable {
 		this.creationdate = creationdate;
 	}
 
-	/*public BigDecimal getOpenbalance() {
+	public BigDecimal getOpenbalance() {
 		return openbalance;
 	}
 
 	public void setOpenbalance(BigDecimal openbalance) {
 		this.openbalance = openbalance;
 	}
-*/
+
 	public Integer getLogoutcount() {
 		return logoutcount;
 	}
@@ -153,13 +153,13 @@ public class Account implements Serializable {
 		this.logoutcount = logoutcount;
 	}
 
-	/*public BigDecimal getBalance() {
+	public BigDecimal getBalance() {
 		return balance;
 	}
 
 	public void setBalance(BigDecimal balance) {
 		this.balance = balance;
-	}*/
+	}
 
 	public Date getLastlogin() {
 		return lastlogin;

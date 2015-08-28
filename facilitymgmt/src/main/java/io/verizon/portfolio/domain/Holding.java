@@ -3,11 +3,18 @@ package io.pivotal.portfolio.domain;
 import java.math.BigDecimal;
 import java.util.HashSet;
 import java.util.Set;
-
+/**
+ * Represents a Holding.
+ * 
+ * Holding being a set of orders related to a particular stock.
+ * 
+ * @author David Ferreira Pinto
+ *
+ */
 public class Holding {
 
 	private Integer id;
-	private String item;
+	private String symbol;
 	private Integer quantity = 0;
 	private BigDecimal purchaseValue = BigDecimal.ZERO;
 	private BigDecimal sellValue = BigDecimal.ZERO;
@@ -19,11 +26,11 @@ public class Holding {
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	public String getitem() {
-		return item;
+	public String getSymbol() {
+		return symbol;
 	}
-	public void setitem(String item) {
-		this.item = item;
+	public void setSymbol(String symbol) {
+		this.symbol = symbol;
 	}
 	public Integer getQuantity() {
 		return quantity;
@@ -51,18 +58,18 @@ public class Holding {
 	}
 	
 	public void addOrder(Order order) {
-		
+		//check order is not already in.
 		if (orders.contains(order)) {
-			//TODO: throw RuntimeException
+			//TODO: throw RuntimeException?? and do nothing;
 		} else {
 			orders.add(order);
-			
-			if (order.getOrderType().equals("ADD")) {
+			//update stats
+			if (order.getOrderType().equals(OrderType.BUY)) {
 				setQuantity(getQuantity()+order.getQuantity());
-				//setPurchaseValue(getPurchaseValue().add(order.getPrice().multiply(new BigDecimal(order.getQuantity()))));
-			} else if (order.getOrderType().equals("DELETE")) {
+				setPurchaseValue(getPurchaseValue().add(order.getPrice().multiply(new BigDecimal(order.getQuantity()))));
+			} else if (order.getOrderType().equals(OrderType.SELL)) {
 				setQuantity(getQuantity()-order.getQuantity());
-				//setSellValue(getSellValue().add(order.getPrice().multiply(new BigDecimal(order.getQuantity()))));
+				setSellValue(getSellValue().add(order.getPrice().multiply(new BigDecimal(order.getQuantity()))));
 			}
 		}
 	}
@@ -76,8 +83,8 @@ public class Holding {
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("Holding [id=").append(id).append(", item=")
-				.append(item).append(", quantity=").append(quantity)
+		builder.append("Holding [id=").append(id).append(", symbol=")
+				.append(symbol).append(", quantity=").append(quantity)
 				.append(", purchasePrice=").append(purchaseValue)
 				.append(", sellPrice=").append(sellValue).append(", orders=")
 				.append(orders).append(", currentValue=").append(currentValue)

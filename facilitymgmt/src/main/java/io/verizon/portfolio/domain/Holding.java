@@ -9,10 +9,10 @@ public class Holding {
 	private Integer id;
 	private String item;
 	private Integer quantity = 0;
-	//private BigDecimal purchaseValue = BigDecimal.ZERO;
-	//private BigDecimal sellValue = BigDecimal.ZERO;
+	private BigDecimal purchaseValue = BigDecimal.ZERO;
+	private BigDecimal sellValue = BigDecimal.ZERO;
 	private Set<Order> orders = new HashSet<>();
-	//private BigDecimal currentValue = BigDecimal.ZERO;
+	private BigDecimal currentValue = BigDecimal.ZERO;
 	public Integer getId() {
 		return id;
 	}

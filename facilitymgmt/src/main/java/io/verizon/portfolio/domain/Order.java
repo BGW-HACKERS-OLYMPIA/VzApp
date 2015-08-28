@@ -15,7 +15,12 @@ import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 
 import org.springframework.format.annotation.DateTimeFormat;
-
+/**
+ * Entity object representing an Order.
+ * 
+ * @author David Ferreira Pinto
+ *
+ */
 @Entity
 @Table(name = "ORDERS")
 public class Order {
@@ -25,16 +30,16 @@ public class Order {
     @Column(name = "orderid")
 	private Integer orderId;
 
-	@Column(name = "employeeid")
+	@Column(name = "accountid")
 	@NotNull
-	private String employeeid;
+	private String accountId;
 	
-	@Column(name = "item", length = 10)
+	@Column(name = "symbol", length = 10)
 	@NotNull
-	private String item;
+	private String symbol;
 
-	//@Column(name = "orderfee", precision = 14, scale = 2)
-	//private BigDecimal orderFee;
+	@Column(name = "orderfee", precision = 14, scale = 2)
+	private BigDecimal orderFee;
 
 	@Column(name = "completiondate")
 	@Temporal(TemporalType.TIMESTAMP)
@@ -46,9 +51,9 @@ public class Order {
 	@Enumerated
 	private OrderType orderType;
 
-	//@Column(name = "price", precision = 14, scale = 2)
-	//@NotNull
-	//private BigDecimal price;
+	@Column(name = "price", precision = 14, scale = 2)
+	@NotNull
+	private BigDecimal price;
 
 	@Column(name = "quantity")
 	@NotNull
@@ -62,21 +67,21 @@ public class Order {
 		this.orderId = orderId;
 	}
 
-	public String getemployeeid() {
-		return employeeid;
+	public String getAccountId() {
+		return accountId;
 	}
 
-	public void setemployeeid(String employeeid) {
-		this.employeeid = employeeid;
+	public void setAccountId(String accountId) {
+		this.accountId = accountId;
 	}
 
-	//public String getitem() {
-		//return item;
-	//}
+	public String getSymbol() {
+		return symbol;
+	}
 
-	//public void setitem(String item) {
-		//this.item = item;
-	//}
+	public void setSymbol(String symbol) {
+		this.symbol = symbol;
+	}
 
 	public BigDecimal getOrderFee() {
 		return orderFee;
@@ -122,8 +127,8 @@ public class Order {
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
 		builder.append("Order [orderId=").append(orderId)
-				.append(", employeeid=").append(employeeid).append(", item=")
-				.append(item).append(", orderFee=").append(orderFee)
+				.append(", accountId=").append(accountId).append(", symbol=")
+				.append(symbol).append(", orderFee=").append(orderFee)
 				.append(", completionDate=").append(completionDate)
 				.append(", orderType=").append(orderType).append(", price=")
 				.append(price).append(", quantity=").append(quantity)
@@ -136,7 +141,7 @@ public class Order {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result
-				+ ((employeeid == null) ? 0 : employeeid.hashCode());
+				+ ((accountId == null) ? 0 : accountId.hashCode());
 		result = prime * result
 				+ ((completionDate == null) ? 0 : completionDate.hashCode());
 		result = prime * result
@@ -147,7 +152,7 @@ public class Order {
 		result = prime * result + ((price == null) ? 0 : price.hashCode());
 		result = prime * result
 				+ ((quantity == null) ? 0 : quantity.hashCode());
-		result = prime * result + ((item == null) ? 0 : item.hashCode());
+		result = prime * result + ((symbol == null) ? 0 : symbol.hashCode());
 		return result;
 	}
 
@@ -160,10 +165,10 @@ public class Order {
 		if (getClass() != obj.getClass())
 			return false;
 		Order other = (Order) obj;
-		if (employeeid == null) {
-			if (other.employeeid != null)
+		if (accountId == null) {
+			if (other.accountId != null)
 				return false;
-		} else if (!employeeid.equals(other.employeeid))
+		} else if (!accountId.equals(other.accountId))
 			return false;
 		if (completionDate == null) {
 			if (other.completionDate != null)
@@ -192,10 +197,10 @@ public class Order {
 				return false;
 		} else if (!quantity.equals(other.quantity))
 			return false;
-		if (item == null) {
-			if (other.item != null)
+		if (symbol == null) {
+			if (other.symbol != null)
 				return false;
-		} else if (!item.equals(other.item))
+		} else if (!symbol.equals(other.symbol))
 			return false;
 		return true;
 	}

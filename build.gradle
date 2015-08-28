@@ -192,6 +192,7 @@ cloudfoundry {
 	space = "development"
 	username = System.getenv()['CF_USERNAME']
 	password = System.getenv()['CF_PASSWD']
+	
 	//file = file("target/web.jar")
 	//file = file("target/portfolio.jar")
 	file = file("springboottrades-portfolio/build/libs/portfolio-0.2.jar")

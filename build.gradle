@@ -210,13 +210,6 @@ cloudfoundry {
 			}
 		}
 	
-		services {
-			'eureka-service' {
-				label = 'MySqlDB'
-				provider = 'User Provided'
-				version = 'n/a'
-				bind = true
-			}
-		}
+	
 	variants = ['-blue', '-green']
 }

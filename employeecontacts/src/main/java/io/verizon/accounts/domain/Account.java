@@ -28,7 +28,7 @@ public class Account implements Serializable {
 	private Integer id;
 
 	@Column(name = "address", length = 250)
-   private String address;
+    private String address;
 
 	@Column(name = "passwd", length = 250)
     private String passwd;
@@ -37,8 +37,8 @@ public class Account implements Serializable {
     @NotNull
     private String userid;
 	
-	@Column(name = "empid", length = 250)
-    private String empid;
+	@Column(name = "email", length = 250)
+    private String email;
 
 	@Column(name = "creditcard", length = 250)
     private String creditcard;
@@ -55,14 +55,14 @@ public class Account implements Serializable {
     private Date creationdate;
     
 	@Column(name = "openbalance", precision = 14, scale = 2)
-   private BigDecimal openbalance;
+    private BigDecimal openbalance;
     
 	@Column(name = "logoutcount")
 	@NotNull
     private Integer logoutcount;
     
 	@Column(name = "balance", precision = 14, scale = 2)
-   private BigDecimal balance;
+    private BigDecimal balance;
     
 	@Column(name = "lastlogin")
 	@Temporal(TemporalType.TIMESTAMP)

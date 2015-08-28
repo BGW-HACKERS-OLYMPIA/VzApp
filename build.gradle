@@ -194,7 +194,7 @@ cloudfoundry {
 	password = System.getenv()['CF_PASSWD']	
 	//file = file("target/web.jar")
 	//file = file("target/portfolio.jar")
-	file = file("springboottrades-portfolio/build/libs/portfolio-0.2.jar")
+	//file = file("springboottrades-portfolio/build/libs/portfolio-0.2.jar")
 	//file = file("springboottrades-accounts/build/libs/accounts-0.2.jar")
 	//file = file("springboottrades-web/build/libs/web-0.2.jar")
 	//file = file("registryServer/build/libs/registry-0.2.jar")
@@ -229,8 +229,8 @@ cloudfoundry {
 	space = "development"
 	username = System.getenv()['CF_USERNAME']
 	password = System.getenv()['CF_PASSWD']
-	file = file("facilitymgmt/build/libs/accounts-0.2.jar")
-	//file = file("carparking/build/libs/web-0.2.jar")
+	//file = file("facilitymgmt/build/libs/accounts-0.2.jar")
+	file = file("carparking/build/libs/web-0.2.jar")
 	//file = file("registryServer/build/libs/registry-0.2.jar")
 	host = "accounts"
 	domain = "cfapps.io"

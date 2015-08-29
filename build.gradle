@@ -212,5 +212,5 @@ cloudfoundry {
 		}
 	
 	
-	//variants = ['-blue', '-green']
+	variants = ['-blue', '-green']
 }

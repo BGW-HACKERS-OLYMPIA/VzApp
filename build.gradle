@@ -190,7 +190,7 @@ apply plugin: 'cloudfoundry'
 
 cloudfoundry {
 	target = "https://api.run.pivotal.io"
-	organization = "hack"
+	organization = "Bgwhackers"
 	space = "development"
 	username = System.getenv()['CF_USERNAME']
 	password = System.getenv()['CF_PASSWD']
@@ -212,5 +212,5 @@ cloudfoundry {
 		}
 	
 	
-	variants = ['-blue', '-green']
+	//variants = ['-blue', '-green']
 }

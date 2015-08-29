@@ -188,7 +188,6 @@ task wrapper(type: Wrapper) {
 apply plugin: 'cloudfoundry'
 
 
-
 cloudfoundry {
 	target = "https://api.run.pivotal.io"
 	organization = "hack"

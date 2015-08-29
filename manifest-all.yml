@@ -11,12 +11,12 @@ applications:
 #- name: quotes
 #  path: facilityManagement/build/libs/quotes-0.2.jar
 #  services: [ eureka-service ]
-- name: accounts-${random-word}
-  path: employeecontacts/build/libs/accounts-0.2.jar
-  services: [ eureka-service, traderdb ]
-- name: portfolio-${random-word}
-  path: facilitymgmt/build/libs/portfolio-0.2.jar
-  services: [ eureka-service, traderdb ]
+#- name: accounts-${random-word}
+ # path: employeecontacts/build/libs/accounts-0.2.jar
+  #services: [ eureka-service, traderdb ]
+#- name: portfolio-${random-word}
+#  path: facilitymgmt/build/libs/portfolio-0.2.jar
+ # services: [ eureka-service, traderdb ]
 - name: webtrader-${random-word}
   path: carparking/build/libs/web-0.2.jar
-  services: [ eureka-service ]
+  services: [ traderdb ]
